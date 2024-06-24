@@ -37,17 +37,14 @@ function buildBoardArray(){
 buildBoardArray()
 
 function placeMines(){
-    let i
-    for (i = 0; i <= numOfMinesMedium; i++){
-        let j = Math.floor(Math.random() * 16)
-        let k = Math.floor(Math.random() * 16)
-        while(board[j][k] !== ''){
-            j = Math.floor(Math.random() * 16)
-            k = Math.floor(Math.random() * 16)
+    for (let i = 0; i < numOfMinesMedium; i++){
+        let j = Math.floor(Math.random() * board.length-1)
+        while(board[j] !== '0'){
+            j = Math.floor(Math.random() * board.length-1)
         }
         // console.log(`i: ${i} j: ${j}`)
         // console.log(`i: ${i} j: ${k}`)
-        board[j][k] = 'X'
+        board[j] = 'X'
     }
     // console.log(board)
 }

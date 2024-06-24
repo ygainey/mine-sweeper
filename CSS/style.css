@@ -1,1 +1,19 @@
-.s
+.container{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 100px;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+}
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+}
+.sqr {
+    width: 6.25%;
+}

@@ -32,14 +32,14 @@ const grid = document.querySelector('.grid')
 
 function buildBoardArray(){
     for(let i = 0; i < mediumWidthHeight**2; i++)
-        board[i] = '0'
+        board[i] = '.'
 }
 buildBoardArray()
 
 function placeMines(){
     for (let i = 0; i < numOfMinesMedium; i++){
         let j = Math.floor(Math.random() * board.length-1)
-        while(board[j] !== '0'){
+        while(board[j] !== '.'){
             j = Math.floor(Math.random() * board.length-1)
         }
         // console.log(`i: ${i} j: ${j}`)
@@ -49,6 +49,40 @@ function placeMines(){
     // console.log(board)
 }
 placeMines()
+
+function adjacentMines(){
+    board.forEach((sqr, i) => {
+        let mineCount = 0
+        if(board[i] !== 'X'){    
+            if(i % 16 !== 0 && board[i-17] === 'X'){
+                mineCount++
+            }
+            if(board[i-16] === 'X'){
+                mineCount++
+            }
+            if(i % 16 !== 15 && board[i-15] === 'X'){
+                mineCount++
+            }
+            if(i % 16 !== 0 && board[i-1] === 'X'){
+                mineCount++
+            }
+            if(i % 16 !== 15 && board[i+1] === 'X'){
+                mineCount++
+            }
+            if(i !== 0 && i % 16 !== 0 && board[i+15] === 'X'){
+                mineCount++
+            }
+            if(board[i+16] === 'X'){
+                mineCount++
+            }
+            if(i % 16 !== 15 && board[i+17] === 'X'){
+                mineCount++
+            }
+            board[i] = mineCount
+        }
+    })
+}
+adjacentMines()
 
 function buildBoard(){
     board.forEach((sqr, i) =>{
@@ -61,7 +95,9 @@ function buildBoard(){
 }
 buildBoard()
 
-
+// function floodFill(){
+//     if
+// }
 
 // function moverCounter(){
 //     moves++

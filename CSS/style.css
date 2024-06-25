@@ -1,5 +1,5 @@
 .container{
-    width: 300px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -15,5 +15,7 @@
     width: auto;
 }
 .sqr {
-    width: 6.25%;
+    width: 5%;
+    border-style: outset;
+    text-align: center;
 }

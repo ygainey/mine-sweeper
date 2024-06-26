@@ -1,3 +1,5 @@
+MINE SWEEPER
+
 ### Recursion
 
 Is a mathematical based function that uses itself to determine the next value. Within programming this can be represented with an array that calls previous indexes to determine the value of the current index.

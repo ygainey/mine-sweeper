@@ -1,13 +1,48 @@
+*{
+    box-sizing: border-box;
+}
+@font-face{
+    font-family:'digital-clock-font';
+    src: url('put_the_location_to_your_font.ttf or .otf');
+}
+
 .container{
     width: 500px;
     display: flex;
     flex-direction: column;
     margin: auto;
     margin-top: 100px;
+    margin-bottom: 50px;
+    background-image: url('../Assets/windows.jpeg');
 }
 .top{
     display: flex;
     justify-content: space-between;
+    padding: 5px;
+    background-color: silver;
+    border-style: inset;
+}
+.flagCounter{
+    border-style: inset;
+    width: 40px;
+    text-align: right;
+    background-color: black;
+    color: red;
+}
+.reset::before{
+    width: 20px;
+    height: 20px;
+    content: "\128512"
+}
+.reset.death{
+    content: "\128128"
+}
+.moveCounter{
+    border-style: inset;
+    width: 40px;
+    text-align: right;
+    background-color: black;
+    color: red;
 }
 .grid{
     display: flex;
@@ -15,7 +50,30 @@
     width: auto;
 }
 .sqr {
-    width: 5%;
-    border-style: outset;
+    width: calc(100% / 16);
+    border-style: inset;
     text-align: center;
+    background-color: ghostwhite;
+}
+.sqr.hidden{
+    color: transparent; 
+    user-select: none;
+    border-style: outset; 
+    background-color: silver;
+}
+
+.sqr.hidden.flag{
+    background-color: yellow;
+}
+
+.sqr.mine{
+    background-color: red;
+}
+
+.sqr.hidden.mine{
+    background-color: silver;
+}
+
+.sqr.hidden.flag.mine{
+    background-color: yellow;
 }

@@ -29,7 +29,7 @@ Is an algorithm that in a given area (in this case a 2D array) with a defined st
 ### Mine Sweeper General Rules
 
 Player is presented with a grid based board (I will be doing medium diffulty setting of 16x16 grid). Each cell is currently hidden and the objective is to find all the mines within the space.
-Players can use either click which determines functionality.
+Players can use either left or right click which determines functionality.
 Left Click - used on cells the player believes to contain no mines
     - This will then reveal the contents of the cell. There are two outcomes:
         - Death, player dies and can reset

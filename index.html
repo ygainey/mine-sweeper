@@ -12,10 +12,49 @@
         <div class="top">
             <div class="flagCounter">Flag Counter</div> 
             <button class="reset"></button>
+            <!-- &#128512; -->
             <div class="moveCounter">Move Counter</div> 
         </div>           
         <section class="grid"></section>
         
-    </div>  
+    </div> 
+    <div class="rules">
+        <h2>Minesweeper Instructions</h2>
+        <ul>
+            <li>You are presented with a grid based board (medium diffulty setting of 16x16 grid). Each cell is currently hidden and the objective is to find all the mines within the space.</li>
+            <li>At the top of the board you have two number displays and a button</li>
+                <ul>
+                    <li>Left Display - flag counter to count how many mines you believe are remaining</li>
+                    <li>Reset Button - to reset the game at any point. It has 3 different styles:</li>
+                        <ul>
+                            <li>face - means currently alive</li>
+                            <li>face - means you have died</li>
+                            <li>face - means you have sucessfully discovered all the mines</li>
+                        </ul>
+                    <li>Right Display - move counter</li>
+                </ul>
+            <li>You can use either left or right click which determines functionality.
+              <ul>
+                <li>Left Click - used on cells the player believes to contain no mines. There are 3 outcomes of a click:</li>
+                    <ul>
+                        <li>Cells with adjacent(the 8 surrounding directions in a 2d grid layout) mines</li>
+                            <ul>
+                                <li>This cell displays a number which represents the number of mines around it</li>
+                            </ul>
+                        <li>Cells without adjacent mines</li>
+                            <ul>
+                                <li>Continues to reveal cells until adjacent mines are hit. </li>    
+                            </ul>
+                        <li>You hit mine (this is not the goal!) and have to reset</li>
+                    </ul>
+                <li>Right Click - used on cells the player believes to conatain a mine</li>
+                    <ul>
+                        <li>On click a flag is placed on this cell</li>
+                        <li>If cell already has a flag, it is then removed and added back to the flag inventory</li>
+                    </ul>
+              </ul>
+            </li>
+          </ul>
+    </div> 
 </body>
 </html>

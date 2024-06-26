@@ -18,18 +18,19 @@ const numOfMinesMedium = 40
 let moves 
 let deathCondition 
 let flagCounter 
+let winCondition
 
 /*------------------------ Cached Element References ------------------------*/
 const grid = document.querySelector('.grid')
-console.dir(grid)
+// console.dir(grid)
 // const cell = document.querySelectorAll('.sqr')
 // console.dir(cell)
 const resetEl = document.querySelector('.reset')
-console.dir(resetEl)
+// console.dir(resetEl)
 const flagCounterEl = document.querySelector('.flagCounter')
-console.dir(flagCounter)
+// console.dir(flagCounter)
 const moveCounterEl = document.querySelector('.moveCounter')
-console.dir(moveCounter)
+// console.dir(moveCounter)
 
 /*-------------------------------- Functions --------------------------------*/
 function init(){
@@ -38,11 +39,12 @@ function init(){
     moves = 0
     deathCondition = false
     flagCounter = numOfMinesMedium
+    winCondition = false
     
     buildBoardArray()
     placeMines()
     adjacentMines()
-    
+    render()
 }
 
 function render(){
@@ -50,15 +52,16 @@ function render(){
 }
 
 function checkWin(){
-    board.forEach((e , i) => {
+    let flagMineCount = 0
+    board.forEach((cell , i) => {
         let x = document.getElementById(i)
-        let count = 0
         if(x.classList.contains('flag') && x.classList.contains('mine')){
-            count++
+            flagMineCount++
+            console.log(flagMineCount)
         }
-        if(count === numOfMinesMedium){
-            //display win message
-            console.log('you win!')
+        if(flagMineCount === numOfMinesMedium){
+            resetEl.classList.add('win')
+            // console.log('you win!')
         }
         //console.log('testinging win')
     })
@@ -70,8 +73,6 @@ function buildBoardArray(){
     for(let i = 0; i < mediumWidthHeight**2; i++)
         board[i] = ' '
 }
-//buildBoardArray()
-// console.log(board)
 
 //randomly place mines in the board array
 function placeMines(){
@@ -80,13 +81,9 @@ function placeMines(){
         while(board[j] !== ' '){
             j = Math.floor(Math.random() * board.length)
         }
-        // console.log(`i: ${i} j: ${j}`)
-        // console.log(`i: ${i} j: ${k}`)
         board[j] = 'X'
     }
-    // console.log(board)
 }
-//placeMines()
 
 //calculate the number of adjacent mines to a square
 function adjacentMines(){
@@ -123,21 +120,18 @@ function adjacentMines(){
         }
     })
 }
-//adjacentMines()
 
 //update the move counter on the UI
 function moveCounter(){
     moveCounterEl.innerText = moves
 }
-// moveCounter()
 
 //update the mine/flag counter on the UI
 function mineCounter(){
     flagCounterEl.innerText = flagCounter 
 }
-// mineCounter()
 
-
+//floodfiil
 function flood(idx){    
     //console.log(visitedCell)
     let x = document.getElementById(idx)
@@ -148,12 +142,12 @@ function flood(idx){
         visitedCell.push(intIdx)
         if(board[intIdx] !== ' '){
             //visitedCell.push(intIdx)
-            console.log(visitedCell)
+            //console.log(visitedCell)
             x.classList.remove('hidden')
             return 
         }else {
             //visitedCell.push(intIdx)
-            console.log(visitedCell)
+            //console.log(visitedCell)
             x.classList.remove('hidden')
             if(intIdx+16 < board.length)
                 flood(intIdx+16)
@@ -171,14 +165,16 @@ function flood(idx){
 }
 
 function resetButton(){
-    init()
-    render()
+    // const square = document.querySelectorAll('.sqr')
+    // square.remove()
+    // init()
+    location.reload()
 }
 
 function rightClick(event){
     event.preventDefault()
     const square = event.target
-    console.log('right')
+    //console.log('right')
     if(square.classList.contains('hidden')){
         if(square.classList.contains('flag')){
             square.classList.remove('flag')
@@ -187,9 +183,10 @@ function rightClick(event){
         }else{
             square.classList.add('flag')
             flagCounter--
-            if(flagCounter === 0){
-                checkWin()
-            }
+            // if(flagCounter === 0){
+            //     checkWin()
+            // }
+            checkWin()
             mineCounter()
         }
     }
@@ -201,7 +198,8 @@ function leftClick(event){
     if(square.classList.contains('flag')){
         //do nothing
     }else if(board[idx] === 'X'){
-        console.log('you are dead')
+        //console.log('you are dead')
+        resetEl.classList.add('death')
         board.forEach((el, i) => {
             const x = document.getElementById(i)
             x.classList.remove('hidden')                 
@@ -238,12 +236,14 @@ function buildBoard(){
     })
     if(deathCondition === true){
         return
-    }  
+    } 
+    if(winCondition === true){
+        return
+    } 
 }
-//buildBoard()
 
 init()
-render()
+
 /*----------------------------- Event Listeners -----------------------------*/
 resetEl.addEventListener('click', resetButton)
 

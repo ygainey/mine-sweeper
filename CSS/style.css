@@ -1,10 +1,10 @@
 *{
     box-sizing: border-box;
 }
-@font-face{
+/* @font-face{
     font-family:'digital-clock-font';
     src: url('put_the_location_to_your_font.ttf or .otf');
-}
+} */
 
 .container{
     width: 500px;
@@ -13,7 +13,14 @@
     margin: auto;
     margin-top: 100px;
     margin-bottom: 50px;
-    background-image: url('../Assets/windows.jpeg');
+    background: url('../Assets/windows.jpeg');
+}
+.rules{
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.rules h2{
+    text-align: center;
 }
 .top{
     display: flex;
@@ -29,9 +36,9 @@
     background-color: black;
     color: red;
 }
-.reset::before{
-    width: 20px;
-    height: 20px;
+.reset{
+    width: 25px;
+    height: 25px;
     content: "\128512"
 }
 .reset.death{

@@ -163,3 +163,8 @@ moveCounter(){
 bombCounter(){
     - negatively iterate on right-click
 }
+
+## UX
+![alt text](./Assets/UX.png) 
+
+Wireframe of basic visual layout of the game

@@ -8,16 +8,19 @@
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="top">
-            <div class="flagCounter">Flag Counter</div> 
-            <button class="reset"></button>
-            <!-- &#128512; -->
-            <div class="moveCounter">Move Counter</div> 
-        </div>           
-        <section class="grid"></section>
-        
-    </div> 
+    <div class="image">
+        <div class="game">
+            <div class="top">
+                <div class="flagCounter">Flag Counter</div> 
+                <!-- <button class="reset"></button> -->
+                <div class="reset">&#128578;</div>
+                <!-- &#128512; -->
+                <div class="moveCounter">Move Counter</div> 
+            </div>           
+            <section class="grid"></section>            
+        </div>
+    </div>
+    <div class="taskbar"></div>
     <div class="rules">
         <h2>Minesweeper Instructions</h2>
         <ul>
@@ -27,9 +30,9 @@
                     <li>Left Display - flag counter to count how many mines you believe are remaining</li>
                     <li>Reset Button - to reset the game at any point. It has 3 different styles:</li>
                         <ul>
-                            <li>face - means currently alive</li>
-                            <li>face - means you have died</li>
-                            <li>face - means you have sucessfully discovered all the mines</li>
+                            <li>&#128578; - means currently alive</li>
+                            <li>&#128128; - means you have died</li>
+                            <li>&#128513; - means you have sucessfully discovered all the mines</li>
                         </ul>
                     <li>Right Display - move counter</li>
                 </ul>
@@ -49,7 +52,7 @@
                     </ul>
                 <li>Right Click - used on cells the player believes to conatain a mine</li>
                     <ul>
-                        <li>On click a flag is placed on this cell</li>
+                        <li>On right click a flag is placed on this cell - represented by turning the cell yellow</li>
                         <li>If cell already has a flag, it is then removed and added back to the flag inventory</li>
                     </ul>
               </ul>

@@ -3,7 +3,7 @@
 Mine Sweeper is a classic Windows game where the objective is to clear a board of mines. The players aim is to flag all of the mines within the grid and reveal all the squares that do not contain mines. A player can use either right-click(place flag) or left click (reveal cell), as cells are revealed information about the surrounding cells are given via a number which represents the number of mines on adjacent cells. If a cell is empty adjacent cells will continue to reveal until a cell containing information is reached.
 
 ## Playable link
-![Playable Link](https://ygainey.github.io/mine-sweeper/)
+- https://ygainey.github.io/mine-sweeper/
 
 ## Project Overview
 

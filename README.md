@@ -1,18 +1,26 @@
 ## General Assembly - Mine Sweeper Project
 
-Mine Sweeper is a classic Windows game where the objective is to clear a board of mines. The players aim is to flag
+Mine Sweeper is a classic Windows game where the objective is to clear a board of mines. The players aim is to flag all of the mines within the grid and reveal all the squares that do not contain mines. A player can use either right-click(place flag) or left click (reveal cell), as cells are revealed information about the surrounding cells are given via a number which represents the number of mines on adjacent cells. If a cell is empty adjacent cells will continue to reveal until a cell containing information is reached.
 
 ## Playable link
+![Playable Link](https://ygainey.github.io/mine-sweeper/)
 
 ## Project Overview
 
 ## Project planning
-![alt text](mine-sweeper-planning.md)
+![Project Planning Doc](mine-sweeper-planning.md)
 
 Planning document used to help guide the game implementation.
 Certain aspects of implementation did differ from the planning document:
     - Not all functions were thought about before
     - 1D vs 2D array for the board, I originally chose a 2D but changed early on
+
+- Day 1 (Monday)
+    - Focused on JavaScript logic, 
+- Day 2 (Tuesday)
+- Day 3 (Wednesday)
+- Day 4 (Thursday)
+    -  Final bit of styling and last testing of win/lose conditions
 
 ## Technologies
 
@@ -25,17 +33,17 @@ Certain aspects of implementation did differ from the planning document:
 ## Game States
 
 ### On Load
-![alt text](./Assets/OnLoad.png)
+![On Load Screen Shot](./Assets/OnLoad.png)
 
 Initial game state
 
 ### On Death
-![alt text](./Assets/OnDeath.png)
+![On Death Screen Shot](./Assets/OnDeath.png)
 
 Game state on death
 
 ### On Win
-![alt text](./Assets/OnWin.png)
+![On Win Screen Shot](./Assets/OnWin.png)
 
 Game state on win
 
@@ -71,4 +79,4 @@ Overall this was a great project that provided a range of challenges and learnin
 - More robust win condition
 
 ### Bugs
-- No obvious bugs, but there is a way to "cheese" the win condition.![alt text](image.png)
+- No obvious bugs, but there is a way to "cheese" the win condition.

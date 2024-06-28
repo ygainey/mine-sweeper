@@ -60,7 +60,6 @@ function checkWin(){
         let x = document.getElementById(i)
         if(x.classList.contains('flag') && x.classList.contains('mine')){
             flagMineCount++
-            console.log(flagMineCount)
         }
         if(flagMineCount === numOfMinesMedium){
             resetEl.classList.add('win')

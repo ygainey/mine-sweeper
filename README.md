@@ -6,6 +6,7 @@ Mine Sweeper is a classic Windows game where the objective is to clear a board o
 - https://ygainey.github.io/mine-sweeper/
 
 ## Project Overview
+We were given a week to plan and complete our project. We were responsible for all aspects of the project, creating the HTML, CSS styling and JavaScript Logic. And then hosting it on Github pages. Our goal was to produce a bug free game that could be played by anyone in the world.
 
 ## Project planning
 ![Project Planning Doc](mine-sweeper-planning.md)
@@ -16,19 +17,26 @@ Certain aspects of implementation did differ from the planning document:
     - 1D vs 2D array for the board, I originally chose a 2D but changed early on
 
 - Day 1 (Monday)
-    - Focused on JavaScript logic, 
+    - Focused on JavaScript logic, with some basic visual styling. Completed dynamically building the HTML using JS. Finished about 60% of the functions I had planned for.
 - Day 2 (Tuesday)
+    - Completed left/right click functionality and the adjacentMine function. 
 - Day 3 (Wednesday)
+    - Completed Floodfill, added instructions in HTML. Added more styling.
 - Day 4 (Thursday)
     -  Final bit of styling and last testing of win/lose conditions
 
 ## Technologies
 
 ### HTML
+- Basic grid
 
 ### CSS
+- Flexbox
+- General Styling
 
 ### JavaScript
+- Floodfill/Recursion
+- Creating HTML using JavaScript
 
 ## Game States
 
